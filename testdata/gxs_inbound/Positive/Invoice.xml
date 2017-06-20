@@ -1,0 +1,76 @@
+<ProcessInvoice releaseID="9.6" versionID="007" languageCode="en-US" systemEnvironmentCode="Test" xmlns="http://www.openapplications.org/oagis/9">
+  <ApplicationArea>
+    <Sender>
+      <LogicalID>PEGATRONTEST</LogicalID>
+      <ComponentID>INVOICE</ComponentID>
+      <TaskID>INVOICEISSUE</TaskID>
+      <!-- ReferenceID needs to be unique for each call. Change this before sending request-->
+      <ReferenceID>12345679322</ReferenceID>
+    </Sender>
+    <Receiver>
+      <ID>NOOKMEDIA</ID>
+    </Receiver>
+    <CreationDateTime>2013-12-10T12:33:15</CreationDateTime>
+    <BODID>810</BODID>
+    <UserArea/>
+  </ApplicationArea>
+  <DataArea>
+    <Process/>
+    <Invoice>
+      <InvoiceHeader>
+        <DocumentID>
+          <!--Unique-->
+          <ID>50023322</ID>
+        </DocumentID>
+        <!-- AlternateDocumentID needs to be unique for each call. Change this before sending request-->
+        <AlternateDocumentID agencyRole="TransactionID">
+          <ID>12345679322</ID>
+        </AlternateDocumentID>
+        <DocumentDateTime>2013-12-10T15:33:27.000-05:00</DocumentDateTime>
+        <DocumentReference type="ShipmentID">
+          <DocumentID>
+            <!--Get this reference no. from SAP
+      Or, this can be got from <DocumentID><ID>8990005949991</ID> 
+      under <ShipmentHeader> from the ASN REST API call-->
+            <ID>8990025949321</ID>
+          </DocumentID>
+        </DocumentReference>
+        <ExtendedAmount currencyID="USD">101.18</ExtendedAmount>
+        <SupplierParty>
+          <PartyIDs>
+            <ID>PEGATRONTEST</ID>
+          </PartyIDs>
+        </SupplierParty>
+        <PurchaseOrderReference>
+          <DocumentID>
+            <!--PO #-->
+            <ID>1100931514</ID>
+          </DocumentID>
+        </PurchaseOrderReference>
+      </InvoiceHeader>
+      <InvoiceLine>
+        <LineNumber>0001</LineNumber>
+        <Item>
+          <ItemID>
+            <!-- EAN -->
+            <ID>9781400699285</ID>
+          </ItemID>
+        </Item>
+        <!-- Quantity should be same as PO & ASN calls -->
+        <Quantity unitCode="EA">2</Quantity>
+        <UnitPrice>
+          <Amount currencyID="USD">50.59</Amount>
+          <PerQuantity unitCode="EA">1</PerQuantity>
+        </UnitPrice>
+        <PurchaseOrderReference>
+          <DocumentID>
+            <!--PO #-->
+            <ID>1100931514</ID>
+          </DocumentID>
+          <LineNumber>10</LineNumber>
+        </PurchaseOrderReference>
+        <ExtendedAmount currencyID="USD">101.18</ExtendedAmount>
+      </InvoiceLine>
+    </Invoice>
+  </DataArea>
+</ProcessInvoice>

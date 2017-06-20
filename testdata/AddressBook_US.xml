@@ -1,0 +1,12 @@
+<address>
+<nickName>Johnny Test</nickName>
+<firstName>Johnny</firstName>
+<lastName>Test</lastName>
+<isPOBox>false</isPOBox>
+<line1>1234 Maple Street</line1>
+<city>Brooklyn</city>
+<state>NY</state>
+<zip>11208</zip>
+<countryNum>840</countryNum>
+<checkSum>37920</checkSum>
+</address>

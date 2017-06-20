@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile>
+    <email>qaautomation@book.com</email> 
+    <password>qatester</password>
+    <lastName>Test</lastName>
+    <firstName>Johnny</firstName>
+    <hintQuestionID>1</hintQuestionID>
+    <hintAnswer>New York</hintAnswer>
+	<locale>en_US</locale>
+</profile>

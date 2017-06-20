@@ -1,0 +1,86 @@
+<ProcessInvoice releaseID="9.6" versionID="007" languageCode="en-US" systemEnvironmentCode="Test" xmlns="http://www.openapplications.org/oagis/9">
+  <ApplicationArea>
+    <Sender>
+      <LogicalID>PEGATRON</LogicalID>
+      <ComponentID>INVOICE</ComponentID>
+      <TaskID>INVOICEISSUE</TaskID>
+      <ReferenceID>INVOICE009</ReferenceID>
+    </Sender>
+    <Receiver>
+      <ID>1594826735</ID>
+    </Receiver>
+    <CreationDateTime>2010-07-13T12:33:15</CreationDateTime>
+    <BODID>810</BODID>
+    <UserArea/>
+  </ApplicationArea>
+  <DataArea>
+    <Process/>
+    <Invoice>
+      <InvoiceHeader>
+        <DocumentID>
+          <ID>50023000</ID>
+        </DocumentID>
+        <AlternateDocumentID agencyRole="TransactionID">
+          <ID> INVOICE001</ID>
+        </AlternateDocumentID>
+        <DocumentDateTime>2013-03-08T15:33:27.000-05:00</DocumentDateTime>
+        <DocumentReference type="ShipmentID">
+          <DocumentID>
+            <ID>20120501</ID>
+          </DocumentID>
+        </DocumentReference>
+        <ExtendedAmount currencyID="USD">1377.46</ExtendedAmount>
+        <SupplierParty>
+          <PartyIDs>
+            <ID>PEGATRON</ID>
+          </PartyIDs>
+        </SupplierParty>
+        <PurchaseOrderReference>
+          <DocumentID>
+            <ID>1100927855</ID>
+          </DocumentID>
+        </PurchaseOrderReference>
+      </InvoiceHeader>
+      <InvoiceLine>
+        <LineNumber>0001</LineNumber>
+        <Item>
+          <ItemID>
+            <ID>9780594033905</ID>
+          </ItemID>
+        </Item>
+        <Quantity unitCode="EA">6</Quantity>
+        <UnitPrice>
+          <Amount currencyID="USD">9.47</Amount>
+          <PerQuantity unitCode="EA">1</PerQuantity>
+        </UnitPrice>
+        <PurchaseOrderReference>
+          <DocumentID>
+            <ID>1100927855</ID>
+          </DocumentID>
+          <LineNumber>20</LineNumber>
+        </PurchaseOrderReference>
+        <ExtendedAmount currencyID="USD">56.82</ExtendedAmount>
+      </InvoiceLine>
+      <InvoiceLine>
+        <LineNumber>0002</LineNumber>
+        <Item>
+          <ItemID>
+            <ID>9781400501779</ID>
+          </ItemID>
+        </Item>
+        <Quantity unitCode="EA">8</Quantity>
+        <UnitPrice>
+          <Amount currencyID="USD">165.08</Amount>
+          <PerQuantity unitCode="EA">1</PerQuantity>
+        </UnitPrice>
+        <PurchaseOrderReference>
+          <DocumentID>
+            <ID>1100927855</ID>
+          </DocumentID>
+          <LineNumber>10</LineNumber>
+        </PurchaseOrderReference>
+        <ExtendedAmount currencyID="USD">1320.64</ExtendedAmount>
+      </InvoiceLine>
+    </Invoice>
+  </DataArea>
+</ProcessInvoice>

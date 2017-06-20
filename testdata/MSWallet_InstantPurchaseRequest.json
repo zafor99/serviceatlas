@@ -1,0 +1,10 @@
+{
+  "instantPurchaseRequest": {
+    "session": { "clientIPAddress": "127.0.0.0" },
+    "cartItem": {
+      "ean": "1111111111111",
+      "quantity": "1"
+    }
+  }
+}
+

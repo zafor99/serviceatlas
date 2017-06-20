@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AcknowledgePurchaseOrder xmlns="http://www.openapplications.org/oagis/9" systemEnvironmentCode="Test" releaseID="0" versionID="9.0" languageCode="en-US" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openapplications.org/oagis/9 C:\Users\hliu\Desktop\PFS\OAGIS\BOD\OAGi-BPI-Platform\org_openapplications_oagis\9_6\Developer\Local\BODs\AcknowledgePurchaseOrder.xsd">
+        <ApplicationArea>
+                <Sender>
+                        <ComponentID>PURCHASING</ComponentID>
+                        <TaskID>POACK</TaskID>
+                        <ReferenceID>POACK1242</ReferenceID>
+                </Sender>
+                <CreationDateTime>2013-02-14T23:59:59-05:00</CreationDateTime>
+        </ApplicationArea>
+        <DataArea>
+                <Acknowledge/>
+                <PurchaseOrder>
+                        <PurchaseOrderHeader>
+                                <DocumentID>
+                                        <ID>1100927616</ID>
+                                </DocumentID>
+                                <AlternateDocumentID>
+                                        <ID>12345</ID>
+                                </AlternateDocumentID>
+                                <DocumentDateTime>2013-02-14T13:05:30-05:00</DocumentDateTime>
+                                <Status>
+                                        <Code name="AcknowledgeCode">A</Code>
+                                </Status>
+                                <SupplierParty>
+                                        <PartyIDs>
+                                                <ID>0005007161</ID>
+                                        </PartyIDs>
+                                </SupplierParty>
+                                <PartialShipmentAllowedIndicator>true</PartialShipmentAllowedIndicator>
+                        </PurchaseOrderHeader>
+                        <PurchaseOrderLine>
+                                <LineNumber>10</LineNumber>
+                                <Status>
+                                        <Code name="AcknowledgeLine">A</Code>
+                                </Status>
+                                <Item>
+                                        <ItemID>
+                                                <ID>9781400501472</ID>
+                                        </ItemID>
+                                </Item>
+                                <Quantity unitCode="EA">1</Quantity>
+                                <PromisedShipDateTime>2013-02-15T00:00:00</PromisedShipDateTime>
+                                <PurchaseOrderSchedule>
+                                        <Quantity unitCode="EA">1</Quantity>
+                                </PurchaseOrderSchedule>
+                        </PurchaseOrderLine>
+                        <PurchaseOrderLine>
+                                <LineNumber>20</LineNumber>
+                                <Status>
+                                        <Code name="AcknowledgeLine">A</Code>
+                                </Status>
+                                <Item>
+                                        <ItemID>
+                                                <ID>9781400501649</ID>
+                                        </ItemID>
+                                </Item>
+                                <Quantity unitCode="EA">1</Quantity>
+                                <PromisedShipDateTime>2013-02-15T00:00:00</PromisedShipDateTime>
+                                <PurchaseOrderSchedule>
+                                        <Quantity unitCode="EA">1</Quantity>
+                                </PurchaseOrderSchedule>
+                        </PurchaseOrderLine>
+                </PurchaseOrder>
+        </DataArea>
+</AcknowledgePurchaseOrder>

@@ -1,0 +1,23 @@
+{
+   "filter": {
+      "bool": {
+         "must": [
+            {
+               "term": {
+                  "WID": "11111"
+               }
+           },
+             {
+               "term": {
+                  "TID": "22222"
+               }
+            },
+            {
+               "term": {
+                  "ENDPOINT": "ATLAS"
+               }
+            }
+         ]
+      }
+   }
+}

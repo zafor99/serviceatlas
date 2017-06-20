@@ -1,0 +1,78 @@
+
+<request>
+  <cartID>
+    <cartClientId>10</cartClientId>
+    <id>400GfvZVdyJYO810</id>
+    <idType>customerId</idType>
+  </cartID>
+  <retailerID>BN2</retailerID>
+  <country>US</country>
+  
+  <productFilterTemplate>min</productFilterTemplate>
+  
+  <taskList>
+    
+  <task type="AddRentalItems">
+<cartItems>
+  <cartItem>
+  <ean>2580071410178</ean>
+  <quantity>1</quantity>
+  <rentalDays>90</rentalDays>
+  </cartItem>
+</cartItems>
+</task>
+
+
+    <task type="AddCreditCard">
+      <creditCard>
+        <numberPlain>5454545454545454</numberPlain>
+        <expiry>2015-06-01T00:00:00-04:00</expiry>
+        <code>MC</code>
+        <securityCode>485</securityCode>
+      </creditCard>
+      
+      <billingAddress>
+        <firstName>Pat</firstName>
+        <lastName>Fuscone</lastName>
+        <line1>6746 W. Topeka Dr.</line1>
+        <line2>Floor 2</line2>
+        <line3>Apt #1</line3>
+        <city>Glendale</city>
+        <state>AZ</state>
+        <zip>85308</zip>
+        <countryNum>840</countryNum>
+      </billingAddress>
+      
+     </task>
+    
+    
+    <task type="SetShippingAddress">
+      <shipmentId>-1</shipmentId>
+      <address>
+        <firstName>Pat</firstName>
+        <lastName>Fuscone</lastName>
+        <line1>6746 W. Topeka Dr.</line1>
+        <line2>Floor 2</line2>
+        <line3>Apt #1</line3>
+        <city>Glendale</city>
+        <state>AZ</state>
+        <zip>85308</zip>
+        <countryNum>840</countryNum>
+      </address>
+      <validateStreet>false</validateStreet>
+    </task>
+    
+    <task type="SetShipServiceLevel">
+      <shipmentID>1</shipmentID>
+      <shippingMethod>
+        <code>STD</code>
+        <shippingMethodId>84</shippingMethodId>
+      </shippingMethod>
+    </task>   
+
+  </taskList>
+  
+</request>
+
+
+

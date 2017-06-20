@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><request>
+<cartID>
+<cartClientId>43</cartClientId>
+<id>4T0OkFhRDbJYO810</id>
+<idType>customerId</idType>
+</cartID>
+<productFilterTemplate>min</productFilterTemplate>
+<retailerID>NOK</retailerID>
+<country>GB</country>
+
+<taskList> 
+<task type="AddItems">
+<cartItems>
+<cartItem>
+<ean>9781400699285</ean>
+<quantity>1</quantity>
+</cartItem>
+</cartItems>
+</task>
+
+<task type="SetBillingAddress"> 
+<address>
+<city>London</city>
+<company>Barnes and Noble</company>
+<countryNum>826</countryNum>
+<firstName>John</firstName>
+<lastName>Smith</lastName>
+<line1>135 Elsenham Street</line1>
+<line2/>
+<line3/>
+<nickName>Nickname</nickName>
+<state/>
+<zip>SW18 5NZ</zip>
+</address>
+</task> 
+
+<task type="SetShippingAddress"> 
+<shipmentId>1</shipmentId> 
+<address>
+<city>London</city>
+<company>Barnes and Noble</company>
+<countryNum>826</countryNum>
+<firstName>John</firstName>
+<lastName>Smith</lastName>
+<line1>135 Elsenham Street</line1>
+<line2/>
+<line3/>
+<nickName>Nickname</nickName>
+<state/>
+<zip>SW18 5NZ</zip>
+</address>
+</task> 
+
+<task type="SetShipServiceLevel">
+             <shipmentID>1</shipmentID>
+             <shippingMethod>
+             <code>STD</code>
+              <shippingMethodId>N1</shippingMethodId>
+</shippingMethod>
+         </task>
+  
+<task type="AddCreditCard"> 
+<creditCard>
+<code>VI</code>
+<expiry>2018-06-01T00:00:00-04:00</expiry>
+<securityCode>562</securityCode>
+<numberPlain>4012888888881881</numberPlain>
+</creditCard>
+</task> 
+</taskList> 
+</request>

@@ -1,0 +1,21 @@
+<paymentMethod>
+<creditCard>
+<code>MC</code>
+<expiryMMYYYY>032017</expiryMMYYYY>
+<securityCode>321</securityCode>
+<numberPlain>5454545454545454</numberPlain>
+<isDefault>true</isDefault>
+<address>
+    <city>Jersey City</city>
+    <countryNum>840</countryNum>
+    <firstName>Darren</firstName>
+    <isPOBox>false</isPOBox>
+    <lastName>Tang</lastName>
+    <nickName>home</nickName>
+    <line1>60 Sip Avenue</line1>
+    <source>DB</source>
+    <state>NJ</state>
+    <zip>07306</zip>
+</address>
+</creditCard>
+</paymentMethod>

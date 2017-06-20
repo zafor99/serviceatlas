@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<request>
+  <cartID>
+    <cartClientId>10</cartClientId>
+    <id>000C8dFTgHJYO810</id>
+    <idType>customerId</idType>
+  </cartID>
+  <retailerID>BN2</retailerID>
+  <country>US</country>
+  <taskList>
+    <task type="AddItems">
+      <cartItems>
+        <cartItem>
+          <ean>9780894807626</ean>
+          <quantity>3</quantity>
+        </cartItem>
+      </cartItems>
+	  </task>
+    <task type="AddCreditCard">
+      <creditCard>
+        <numberPlain>5454545454545454</numberPlain>
+        <expiry>2015-06-01T00:00:00-04:00</expiry>
+        <code>MC</code>
+        <securityCode>485</securityCode>
+      </creditCard>
+    </task>
+    <task type="SetBillingAddress">
+      <address>
+  <city>Henderson</city>
+        <company>Barnes and Noble</company>
+        <countryNum>840</countryNum>
+		<firstName>Darren</firstName>
+		<lastName>Tang</lastName>
+		<line1>944 Village Dr</line1>
+        <line2 />
+        <line3 />
+        <phone>2124146429</phone>
+		<nickName>home</nickName>
+		<state>KY</state>
+        <zip>42420-2278</zip>
+      </address>
+    </task>
+    <task type="SetShippingAddress">
+      <shipmentId>1</shipmentId>
+      <address>
+        <line1>944 Village Dr</line1>
+     <city>Henderson</city>
+		<state>KY</state>
+        <zip>42420-2278</zip>
+        <countryNum>840</countryNum>
+      </address>
+    </task>
+    <task type="SetShipServiceLevel">
+      <shipmentID>1</shipmentID>
+      <shippingMethod>
+        <code>STD</code>
+        <shippingMethodId>84</shippingMethodId>
+      </shippingMethod>
+    </task>
+    
+  </taskList>
+</request>

@@ -1,0 +1,19 @@
+{query:{
+  "bool" : {
+    "must" : [ {
+      "match" : {
+        "PID" : {
+          "query" : "147491724",
+          "type" : "boolean"
+        }
+      }
+    }, {
+      "match" : {
+        "loglevel" : {
+          "query" : "ERROR",
+          "type" : "boolean"
+        }
+      }
+    } ]
+  }
+}}

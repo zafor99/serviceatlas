@@ -1,0 +1,24 @@
+<instantPurchaseRequest>
+          <cartItem>
+                 <ean>9788483657386</ean>
+                 <quantity>1</quantity>
+             </cartItem>
+<microsoftToken>EwA4AgtmBAAUBG+E1VY+gztfB2bCIq/03tqknHMAAco12xnXvTvO9fBlb7OTf
+ZrZfzahsyn/fhXvpnH6I9/QXVoUNeh5NWtdhwZnxhhY2vX/dXVfy19AsLvY90n5An0yvOcjQ2rnI
+O25QUTLm1WLuQw/EM0Y1nPh2yGWKo5x2dxkgxTA2dzz2c2uf2yHvdXlfFCxI1Hxjuou4zYZ5gZH
+5Nn9/uYaiP0IVgW4Wz/OL5eXY2R3GPFtQBALmOCTwMtJdfGJPIFMrj+PBQ0siRZ8SKKXCnhw
+ZqwJGj8hJsrAhSaoeWOAfQRBI5viWW+1DlbvmitZs1WVFNk3Uq+zS8vAtPA9bJvFLtlquOZfX
+3sCQU/bOYLDKtU6rXoJlz8KqWADZgAACGKaCbGZ6l1ECAGltTfO7n9znogdTJ9ueSmvx2
+KVFjH738yzqUcSaXZghCoUschEWq1CaTi2rzs1LTWqKNffywr4rvQJ/HQI7uEUaBO6EtaDAU
+htl25pXHTf84OMqXRxtNWdynocAckyc8Ulf1SA5yb8z563F3ts575d0Bbexevd/TU8M9G
+kWL7xyCZEIBlqjVCX1He2wSVZt3K/D/UpGf+86ORsbvES/hGkKJYIsSk58Ttsozz7
+cM8PmkNSd2E2iIpFg7JR7vj+1AMQnlFwx6ayOnMCjLimiZsbV8SmMf9PPpjhwxh
+H2DkPiowJBDIsqd5EwNdqkp6OzzxwuExMPAEVgfMCkEiS41H5NtUpyIWbhMAAA==</microsoftToken>
+<session>
+      <sourceID>P001000078</sourceID>
+      <clientIPAddress>10.22.12.22</clientIPAddress>
+      <deviceID />
+      <deviceSerialNumber />
+      <userAgent>I am sam</userAgent>
+    </session>
+</instantPurchaseRequest>

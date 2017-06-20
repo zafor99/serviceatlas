@@ -1,0 +1,17 @@
+{query:{
+{
+   "filter": {
+       "bool": {
+       "must": [
+          {
+              "term": {
+                 "loglevel": "ERROR"
+              }},{
+              "term": {
+                 "PID": "148182654"
+              }
+          }
+       ]
+       }
+   }
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<NotifyShipment xmlns="http://www.openapplications.org/oagis/9" systemEnvironmentCode="Test" releaseID="0" versionID="9.0" languageCode="en-US" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openapplications.org/oagis/9 C:\Users\hliu\Desktop\PFS\OAGIS\BOD\OAGi-BPI-Platform\org_openapplications_oagis\9_6\Developer\Local\BODs\NotifyShipment.xsd"> 
+<ApplicationArea> 
+<Sender> 
+<ReferenceID>ASNOBATCH112233</ReferenceID> 
+</Sender> 
+<CreationDateTime>2008-12-09T13:55:50Z</CreationDateTime> 
+</ApplicationArea> 
+<DataArea> 
+<Notify/> 
+<Shipment> 
+<ShipmentHeader> 
+<DocumentID> 
+<ID>5072059300031366</ID> 
+</DocumentID> 
+<AlternateDocumentID> 
+<ID>12345</ID> 
+</AlternateDocumentID> 
+<DocumentDateTime>2008-12-09T08:11:23Z</DocumentDateTime> 
+<BillOfLadingReference> 
+<DocumentID> 
+<ID>BOL123</ID> 
+</DocumentID> 
+</BillOfLadingReference> 
+<DeliveryReference> 
+<DocumentID> 
+<ID>TRAILER123</ID> 
+</DocumentID> 
+</DeliveryReference> 
+<ActualShipDateTime>2008-12-09T00:00:00Z</ActualShipDateTime> 
+<ScheduledDeliveryDateTime>2008-12-10</ScheduledDeliveryDateTime> 
+<GrossWeightMeasure unitCode="LB">10.00</GrossWeightMeasure> 
+<CarrierParty> 
+<PartyIDs> 
+<ID>UPS</ID> 
+<SCACID>UPSN</SCACID> 
+</PartyIDs> 
+</CarrierParty> 
+<SupplierParty> 
+<PartyIDs> 
+<ID>0005007079</ID> 
+</PartyIDs> 
+</SupplierParty> 
+<ShipToParty> 
+<PartyIDs> 
+<ID>2110</ID> 
+</PartyIDs> 
+</ShipToParty>  
+<FreightCostAmount>0.0</FreightCostAmount> 
+<ShipmentServiceLevelCode>NXD</ShipmentServiceLevelCode> 
+</ShipmentHeader> 
+<ShipmentUnit> 
+<ID>5072059300031366</ID> 
+<TrackingID></TrackingID> 
+<GrossWeightMeasure unitCode="LB">0.0</GrossWeightMeasure> 
+<FreightChargeAmount>0.0</FreightChargeAmount> 
+<SalePriceAmount currencyCode="USD">0.0</SalePriceAmount> 
+<ShipmentUnitContainer> 
+<ContainerID>20384302842304</ContainerID> 
+<ParentContainerID>293483248230</ParentContainerID> 
+</ShipmentUnitContainer> 
+<ShipmentUnitItem> 
+<ItemID> 
+<ID>50720593000313663</ID> 
+</ItemID> 
+<ShippedQuantity unitCode="EA">5</ShippedQuantity> 
+<PurchaseOrderReference> 
+<DocumentID> 
+<ID>1223293434</ID> 
+</DocumentID> 
+<LineNumber>10</LineNumber> 
+<OrderQuantity unitCode="EA">5</OrderQuantity> 
+</PurchaseOrderReference> 
+<ItemSubLine> 
+<SerialNumber>1031060003693030</SerialNumber> 
+<SerialNumber>1031060003693031</SerialNumber> 
+<SerialNumber>1031060003693033</SerialNumber> 
+<SerialNumber>1031060003693034</SerialNumber> 
+<SerialNumber>1031060003693035</SerialNumber> 
+</ItemSubLine> 
+<UnitSalePriceAmount>90.0</UnitSalePriceAmount> 
+</ShipmentUnitItem> 
+</ShipmentUnit> 
+</Shipment> 
+</DataArea> 
+</NotifyShipment>

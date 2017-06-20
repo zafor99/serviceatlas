@@ -1,0 +1,9 @@
+<instantPurchaseRequest>
+	<session>
+		<clientIPAddress>127.0.0.0</clientIPAddress>
+	</session>
+	<cartItem>
+		<ean>2940043860101</ean>
+		<quantity>1</quantity>
+	</cartItem>
+</instantPurchaseRequest>

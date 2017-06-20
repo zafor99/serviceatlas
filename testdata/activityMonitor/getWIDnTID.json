@@ -1,0 +1,16 @@
+{
+   "filter": {
+       "bool": {
+       "must": [
+          {
+              "term": {
+                 "ENDPOINT": "ORDER_STATUS_DB"
+              }},{
+              "term": {
+                 "PID": "111111111"
+              }
+          }
+       ]
+       }
+   }
+}

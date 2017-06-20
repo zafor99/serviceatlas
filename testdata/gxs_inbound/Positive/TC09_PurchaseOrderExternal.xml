@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessPurchaseOrder xmlns="http://www.openapplications.org/oagis/9" releaseID="9.6" versionID="1" systemEnvironmentCode="Test" languageCode="en-US">
+  <ApplicationArea>
+    <Sender>
+      <LogicalID>JOHNLEWIS</LogicalID>
+      <ComponentID>PURCHASING</ComponentID>
+      <TaskID>PurchaseOrder</TaskID>
+      <ReferenceID>JOHNLEWIS-30000000112</ReferenceID>
+    </Sender>
+    <Receiver>
+      <ID>NOOKMEDIA</ID>
+    </Receiver>
+    <CreationDateTime>2013-04-30T15:26:33</CreationDateTime>
+  </ApplicationArea>
+  <DataArea>
+    <Process/>
+    <PurchaseOrder>
+      <PurchaseOrderHeader>
+        <DocumentID>
+          <ID>803108</ID>
+        </DocumentID>
+        <AlternateDocumentID agencyRole="0001">
+          <ID>1</ID>
+        </AlternateDocumentID>
+        <DocumentDateTime>2013-04-22T20:10:00</DocumentDateTime>
+        <Note type="General">DUMMY NOTE DATA FOR REFERENCE</Note>
+        <ShipToParty>
+          <PartyIDs>
+            <ID>5023949643131</ID>
+          </PartyIDs>
+        </ShipToParty>
+        <TransportationTerm>
+          <IncotermsCode>DUMMY</IncotermsCode>
+        </TransportationTerm>
+        <RequestedShipDateTime>2013-04-29T00:00:00</RequestedShipDateTime>
+      </PurchaseOrderHeader>
+      <PurchaseOrderLine>
+        <LineNumber>1</LineNumber>
+        <Note type="General">DUMMY NOTE DATA FOR REFERENCE</Note>
+        <Item>
+          <ItemID>
+            <ID>5414847340703</ID>
+          </ItemID>
+          <CustomerItemID>
+            <ID>51420102</ID>
+          </CustomerItemID>
+          <Classification>
+            <Description type="CasePackValue">1</Description>
+          </Classification>
+        </Item>
+        <Quantity unitCode="EA">2</Quantity>
+        <UnitPrice>
+          <Amount currencyID="GBP">50.594</Amount>
+        </UnitPrice>
+      </PurchaseOrderLine>
+    </PurchaseOrder>
+  </DataArea>
+</ProcessPurchaseOrder>

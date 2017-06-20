@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NotifyShipment xmlns="http://www.openapplications.org/oagis/9" systemEnvironmentCode="Test" releaseID="0" versionID="9.0" languageCode="en-US" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openapplications.org/oagis/9 C:\Users\hliu\Desktop\PFS\OAGIS\BOD\OAGi-BPI-Platform\org_openapplications_oagis\9_6\Developer\Local\BODs\NotifyShipment.xsd">
+  <ApplicationArea>
+    <Sender>
+      <LogicalID>PEGATRONTEST</LogicalID>
+      <!-- ReferenceID needs to be unique for each call. Change this before sending request-->
+      <ReferenceID>ASN_2322</ReferenceID>
+    </Sender>
+    <CreationDateTime>2013-07-31T13:55:50Z</CreationDateTime>
+  </ApplicationArea>
+  <DataArea>
+    <Notify/>
+    <Shipment>
+      <ShipmentHeader>
+        <!--DocumentID must be unique for each call. Change this before sending request-->
+        <DocumentID><ID>8990025949322</ID>
+        </DocumentID>
+        <AlternateDocumentID>
+          <ID>TRANSID_123</ID>
+        </AlternateDocumentID>
+        <DocumentDateTime>2013-07-31T08:11:23Z</DocumentDateTime>
+        <ActualShipDateTime>2013-07-31T00:00:00Z</ActualShipDateTime>
+        <ScheduledDeliveryDateTime>2013-07-31</ScheduledDeliveryDateTime>
+        <GrossWeightMeasure unitCode="LB">120.0</GrossWeightMeasure>
+        <CarrierParty>
+          <PartyIDs>
+            <ID/>
+            <SCACID>UPSN</SCACID>
+          </PartyIDs>
+        </CarrierParty>
+        <SupplierParty>
+          <PartyIDs>
+            <ID>PEGATRONTEST</ID>
+          </PartyIDs>
+        </SupplierParty>
+        <ShipToParty>
+          <PartyIDs>
+            <ID>2110</ID>
+          </PartyIDs>
+        </ShipToParty>
+        <FreightCostAmount>505.90</FreightCostAmount>
+        <ShipmentServiceLevelCode>NXD</ShipmentServiceLevelCode>
+      </ShipmentHeader>
+      <ShipmentUnit>
+        <ID>00019288990005949980</ID>
+        <TrackingID>L24234723947240</TrackingID>
+        <GrossWeightMeasure unitCode="LB">65</GrossWeightMeasure>
+        <FreightChargeAmount>5008.41</FreightChargeAmount>
+        <ShipmentUnitContainer type="Carton">
+          <ContainerID>20384302842304</ContainerID>
+          <ParentContainerID>293483248230</ParentContainerID>
+        </ShipmentUnitContainer>
+        <ShipmentUnitItem>
+          <ItemID>
+            <!-- EAN -->
+            <ID>9781400699285</ID>
+          </ItemID>
+          <SupplierItemID>
+            <!-- EAN -->
+            <ID>9781400699285</ID>
+          </SupplierItemID>
+          <!-- This is the Actual Quantity Shipped  -->
+          <ShippedQuantity unitCode="EA">100</ShippedQuantity>
+          <PurchaseOrderReference>
+            <DocumentID>
+              <!-- This is PO# get it from SAP -->
+              <ID>1100931514</ID>
+            </DocumentID>
+            <LineNumber>10</LineNumber>
+            <!-- This is the Actual Quantity Ordered  -->
+            <OrderQuantity unitCode="EA">100</OrderQuantity>
+          </PurchaseOrderReference>
+          <UnitSalePriceAmount>50.59</UnitSalePriceAmount>
+        </ShipmentUnitItem>
+      </ShipmentUnit>
+    </Shipment>
+  </DataArea>
+</NotifyShipment>
