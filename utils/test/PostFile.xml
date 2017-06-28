@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Request>
+	<Get filterTemplate="min" filterTemplateLinked="min">
+		<EANS>
+			<EAN>1234</EAN>
+			<EAN>9780385533829</EAN>
+			<EAN>2940000052327</EAN>
+		</EANS>
+	</Get>
+</Request>
