@@ -1,0 +1,16 @@
+http://www.baeldung.com/reactor-core
+
+In order for an application to be reactive, the first thing it must be able to do is to produce a stream of data.
+
+a Flux. It’s a stream which can emit 0..n elements.
+a Mono, which is a stream of 0..1 elements
+
+This looks and behaves almost exactly the same as the Flux, only this time we are limited to no more than one element.
+
+Why Not Just Flux?
+
+But really, knowing this cardinality is useful. This is because a few operations only make sense for one of the two types, and because it can be more expressive (imagine findOne() in a repository).
+
+The core difference is that Reactive is a push model, whereas the Java 8 Streams are a pull model. In reactive approach. events are pushed to the subscribers as they come in.
+
+Backpressure is when a downstream can tell an upstream to send it fewer data in order to prevent it from being overwhelmed.

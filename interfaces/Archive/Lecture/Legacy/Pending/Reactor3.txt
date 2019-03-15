@@ -1,0 +1,38 @@
+Take a traditional sequential workflow
+
+    Loop
+        x = longRunningMethod()
+        y = longRunningMethod()
+        z = longRunningMethod()
+        a = x + y + z
+
+If the computations are lengthy, then this single threaded approach is inefficient, particularly if x, y and z are not dependent on one another.
+
+Obviously we could rewrite this code to employ threads.
+
+    Loop
+        x = Thread(longRunningMethod())
+        y = Thread(longRunningMethod())
+        z = Thread(longRunningMethod())
+        a = x + y + z
+
+This addresses the inefficiency but introduces its own complications, such as
+
+    Having to wait for x, y and z to complete before computing a.
+
+        Callback Hell.
+
+    What if inside of the longRunningMethod, there are additional longRunningMethod calls.
+
+        We are back to square one in terms of blocking, waiting for each thread to finish.
+
+So what's the alternative?
+
+    Suppose that each time we wanted to perform a single task or calculation, rather than performing the task or calculation directly, we wrapped the task or calculation in a Message and placed it in a queue, getting back a Promise to deliver the result of the calculation when requested.
+
+    Suppose also that there was a pool of worker threads whose job it was to take each Message and perform the task on behalf of the client, making the result available via the earlier Promise upon generation.
+
+    The result would be a system in which, code could be composed in a synchronous manner, but would run in an synchronous manner, maximizing throughput.
+
+
+

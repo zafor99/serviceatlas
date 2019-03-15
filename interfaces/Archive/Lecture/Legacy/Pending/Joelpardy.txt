@@ -1,0 +1,152 @@
+Jeopardy
+
+Spring JDBC
+
+1.  The JDBC Template is a manifestation of what design pattern?
+
+    Template method
+
+2.  The JDBC Template cannot be declared as a Spring bean. It
+    must be instantiated programmatically. True or False?
+
+    False
+
+3.  The JDBC handler method that processes one record at a time
+    for their side effects is:
+
+    processRow
+
+4.  The ResultSetExtractor is invoked by Spring ____ times per
+    ____
+
+    1 time per query
+
+5.  The type of exception thrown from a Jdbc Template.
+
+    DataAccessException
+
+Transactions
+
+1.  The "I" in the Acronym ACID stands for:
+
+    Isolated
+
+2.  Transaction management is appropriately done from the _______
+    layer.
+
+    service
+
+3.  What is the effect of attaching the @Transactional
+    annotation to a test method?
+
+    Causes the test database to rollback any modifications performed by the test method
+
+4.  Visual
+
+    How many transactions will be committed as a result of the
+    following configuration?
+
+    A --        Required
+    |\  |
+    v v v
+    B C D       Required    Never   Required
+
+    0
+
+5.  Visual
+
+    How many transactions will be committed as a result of the
+    following configuration?
+
+    A --        Not Supported
+    |\  |
+    v v v
+    B C D       Required    Mandatory   Required
+
+    1
+
+JPA
+
+1.  The Component that manages the Persistence Context is the
+    ______________
+
+    EntityManager
+
+2.  The Annotation that indicates that a POJO is mapped to a
+    table is
+
+    @Entity
+
+3.  The term to describe an object that has been loaded into the
+    persistence context, and is actively being operated on in a transaction/session.
+
+    Managed
+
+4.  What is the acronym/name of the query language bundled with
+    JPA?
+
+    JPQL
+
+5.  What it means to say that an object is in a "detached" state?
+
+    A copy lives in ordinary ram, a copy lives in the database, but the 2 copies are not actively being synchronized.
+
+Spring Boot
+
+1.  If you annotate your application with @SpringBootApplication,
+    and declare a dependency on the spring-jdbc-starter, Spring will automatically create a datasource for you, if it finds one in your classpath. True or False?
+
+    True
+
+2.  The default name for the properties file Spring boot looks
+    for.
+
+    application.properties
+
+3.  An alternative annotation that can be used to create default
+    infrastructure beans discovered in the classpath
+
+    @EnableAutoConfiguration
+
+4.  The purpose of the Spring Boot plugin.
+
+    Generate WAR/JAR files for you Spring boot application.
+
+5.  Using Spring Boot a single application can be run as a
+    desktop and web application. True or False?
+
+    True
+
+AOP
+
+1.  The term for a method of the target to which advice can be
+    applied.
+
+    Joinpoint
+
+2.  The term for the class that implements a cross-cutting
+    concern
+
+    Aspect
+
+3.  The type of advice that provides both pre and post method
+    processing
+
+    Around
+
+4.  The type of advice you would use to cleanup, regardless of
+    whether the business method succeeded or failed
+
+    After
+
+5.  The annotation used to turn on AOP
+
+    @EnableAspectJAutoProxy
+
+
+
+
+
+
+
+

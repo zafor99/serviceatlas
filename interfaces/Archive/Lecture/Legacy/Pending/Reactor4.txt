@@ -1,0 +1,52 @@
+https://codewords.recurse.com/issues/two/an-introduction-to-reactive-programming
+
+There has been a significant shift in recent years towards server-side and network programming using event-driven asynchronous runtime environments and frameworks. Asynchronous code allows independent IO operations to run concurrently, resulting in more efficient code. However, this improved efficiency comes at a cost — the code may become a mess of nested callbacks.
+
+How can we combine the simplicity of synchronous code with the efficiency of the asynchronous approach? Futures. Futures are an abstraction that allow us to capture the effect of latency in asynchronous computations, encapsulate event-handling code, and use higher-order functions such as map, reduce, and filter, to compose clean and readable asynchronous code.
+
+Code example involving loop that repeatedly downloads files.
+
+What's wrong with this example? It's synchronous (translation: sequential). The second file won't be downloaded until the first download has completed. The third file won't be downloaded until the second file has completed. There is no reason for this. Your computer is more than powerful enough to download multiple files at once, if only we tried. To summarize, the code is single threaded when it doesn't have to be, and that thread gets blocked, prolonging the amount of time it takes to complete the task.
+
+But a traditional asynchronous approach has its own problems; Callback Hell, where access to shared data may need to be synchronized against the ravages of concurrent access, introducing some (less significant, but potentially dangerous, e.g. deadlock) delays of its own.
+
+The good news:
+
+    This approach allows for more efficient use of system resources
+
+The bad news:
+
+    We need to have shared state variables (resultsAccumulator and isUrlCompleted) and synchronize access to them
+
+    Each asynchronous processing step requires a nested callback, quickly leading to “callback hell”
+
+    The code is much harder to read and understand
+
+Futures/Promise to the rescue.
+
+    Futures allow us to write asynchronous code in a more readable, maintainable, synchronous style.
+
+    Promises are the construct that manufacture the Futures.
+
+A future is an object that expresses a result of asynchronous computation—a value that is not available yet but may be available in the future1. This allows the asynchronous version of fetchUrl to return a value of type Future[String] which is then used in synchronous-looking code, without worrying about whether a String value is actually available.
+
+Under the asynchronous model:
+
+1.  Define an ordinary synchronous version of a function that
+    returns the result of some synchronous operation.
+2.  Define an asynchronous version of the function that returns a
+    Future version of the result of the result of the synchronous operation.
+    2A. The logic of the asynchronous version would
+        Define a success handler that completes the Promise, successfully
+        Define an error handler that completes the Promise unsuccessfully.
+        Returns the future of the promise to the caller.
+3.  Use the Future API which includes operations that generate
+    Futures to compose the code in a more synchronous manner.
+
+Lastly, we introduce the concept of waiting (which at first may seem odd, but turns out to be quite useful).
+
+The basic approach is to wrap each block of asynchronous code within an async block and each computation resulting in a future within an await block. The computation within an await block will be “suspended” until the corresponding future is completed, but in a non-blocking fashion and without any performance penalties.
+
+
+
+

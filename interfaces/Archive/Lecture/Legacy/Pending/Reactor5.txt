@@ -1,0 +1,143 @@
+Reactive Ideas
+
+
+
+
+Let's be clear about something.
+
+    A lot of the hype around Reactive programming makes "magic" out of the fact that Reactive programming libraries come with a variety of routine function that eliminate the need to reinvent common wheels.
+
+        It is often presented as some sort of "magical" programming model, when in some respects it is nothing more than a robust set of libraries designed for fluent programming.
+
+The hardest part of the learning journey is thinking in Reactive. It's a lot about letting go of old imperative and stateful habits of typical programming, and forcing your brain to work in a different paradigm.
+
+    Example.
+
+        Suppose I wanted to compute the square of all of the numbers in a data set. In an imperative language, I might
+
+        1.  Define a function that given a number computes the
+            square of that number.
+        2.  Define a function that given a dataset, and the
+            square function, iterate over the dataset, applying the square function to each member of the dataset, gathering the result of those computations in a new dataset.
+
+            public int square(int x) {
+                return x * x;
+            }
+
+            public Collection<B> map(Collection<A> input, Function f) {
+                Collection <B> output = new Collection<A>();
+                Iterator<A> iterator = input.iterator();
+                while (input.hasNext()) {
+                    output.append(f(input.next());
+                }
+            }
+
+            Allowing us to say:
+                Collection<A> collection = ...;
+                Collection<B> squareCollection = map(collection, square);
+
+            Next, imagine that the platform included a plethora of library functions like the map function, designed to perform a wide array of standard transformations on datasets, so that the application developer would never have to iterate over the dataset herself, but would instead just invoke the appropriate transformation function.
+
+A stream is a sequence of ongoing events ordered in time.
+
+    It can emit three different things
+
+        A value (of some type)
+        An error
+        A "completed" signal
+
+We capture these emitted events only asynchronously, by defining 3 functions
+
+    A function that will execute when a value is emitted
+    A function that will execute when an error is emitted
+    A function that will execute when 'completed' is emitted
+
+    Sometimes these last two can be omitted and you can just focus on defining the function for values
+
+        e.g. Simple use cases.
+
+    What now???
+
+====
+
+Reactive programming is programming with asynchronous data streams.
+
+    The ideas behind reactive programming originate with well known asynchronous design and architecture patterns like the Observer pattern in which
+
+        Event consumers subscribe with event producers for notification of some event.
+
+        Upon generation of such events, the producer invokes a callback method on the consumer to trigger a response to the event.
+
+    Data streams are just collections of data, where data can be anything.
+
+        Scalar values.
+        Objects
+        Collections.
+        Events.
+
+    Example of this model in action are:
+
+        An application needing to respond to a mouse motion.
+        An application needing to respond to the generation of a tweet.
+
+====
+
+The big question we are trying to resolve is
+
+    How do we transform the contents of a datastream?
+
+    Example.
+
+    Suppose the stream contains events representing keystrokes, or mouse clicks on buttons, or tweets and whatever the event, we want to count the number of times it occurs.
+
+    How would we do this synchronously?
+    What problems would such a synchronous approach have to deal with?
+
+        How to known when the stream ends (so it can signal complete).
+        What if the stream is infinite?
+        How to handle errors
+
+    The general form of a statement in reactive programming is:
+
+        newstream = existingStream.operator(function)
+
+        Where ...
+
+    Important ideas lurking beneath the surface
+
+        Streams are immutable.
+
+        You can create them.
+        You can add things to them.
+        You cannot modify them.
+
+    The stream API is a fluent api, so behaviors like
+
+        stream.operation1(...).operation2(...).operation3(...) are standard.
+
+    How might we count the number of items in a stream using traditional techniques.
+
+        Example.
+
+    How might we achieve the equivalent in streams
+
+        For each event, convert to a 1
+        From the resulting stream, add the 1's
+
+        The good news, is that the reactor library already provides the widgets to carry out most of this in the form of a map function and a scan function
+
+    Case study.
+
+        Suppose you wanted to count, not the number of single clicks, but the number of multi-click events some of which might be 2 clicks or 3 clicks.
+
+        In other words, given a stream of single clicks we want to
+
+            Batch them into single, double, triple click events.
+            Count the number of multi-click events.
+
+        What extra programming would this entail?
+
+            How do you figure out what a multi-click event looks like
+
+stream.distinct.map(sum)
+

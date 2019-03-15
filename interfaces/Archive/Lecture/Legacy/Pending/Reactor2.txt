@@ -1,0 +1,112 @@
+Reactive programming combines the observer and iterator patterns and functional idioms
+
+Cold observables are lazy. They don’t do anything until someone starts observing them (subscribe in RX).
+
+Hot streams are active before the subscription like a stock ticker, or data sent by a sensor or a user. The data is independent of an individual subscriber. When an observer subscribes to a hot observable, it will get all values in the stream that are emitted after it subscribes.
+
+The data produced by a cold stream is not shared among subscribers and when you subscribe you get all the items.
+The values are shared among all subscribers.
+
+That’s the third point: never block. Because you don’t own the thread calling you, you must be sure to never block it.
+
+The idea is that large software systems must be responsive, whether it be to a user or another system, and this requires that they be both elastic so that they can scale up and down in capacity and resilient so that a partial failure doesn’t cause a full system failure, and the way to achieve these is by decoupling the parts of a system in space and time via message passing. One can think of the parts of such a system as individual reactive systems — each one continuously responding to input being prompted from the outside.
+
+One way to think about reactive programming is writing the parts of a code as individual reactive systems, each part continuously responding to input being prompted from the environment (i.e. the other parts of the code).
+
+When a class invokes a method on another class (left in figure), it is giving up control of the thread and hoping that that the method behaves nicely (e.g. does not throw an exception) and returns sometime soon. This requires quite a bit of trust on the part of the caller and places quite a bit of responsibility on the callee. The more distant these two are in a codebase the more challenging these become. Observation helps here because (after an initial subscription method call) the calling class can continue along executing on its thread and handle notifications from the other class as they occur. In the figure, B no longer stands in the way of what A needs to get done.
+
+You may recall I argued that in reactive programming a value, like a cell
+in a spreadsheet represents a relation, rather than the result of a method
+call made at some particular moment in time. What follows is that if the
+value of an independent variable of a relation is modified after the
+relation is defined, the value of the dependent variable changes automatically,
+without the need for a redundant method call to synchronize the two.
+
+Here is a snippet from an article that makes the same point.
+
+var x = 5;
+var y = 4;
+
+var s <=> x + y;  // s == 9
+
+x = 9;            // s == 13
+
+https://medium.com/@tombly/demystifying-reactive-programming-945656e933b8
+
+Here, an imaginary declarative equality operator (< = >) says that the value of s should just always be whatever x + y is. In an imperative style we would have to reassign s any time x or y changes. Another example of declarative programming is a spreadsheet — one simply enters a formula such as “=A1+B1” into a cell and it just always shows the result of the formula. There’s no specification of how the calculation is carried out, just how it should be.
+
+Declarative programming isn’t magic, we’re not eliminating any complexity, what we’re doing is moving some of the complexity out of the thing we’re interested in, so that that thing is easier to write.
+
+https://medium.com/@tombly/demystifying-reactive-programming-945656e933b8
+
+The classes within the closely-coupled groups make direct method calls on one another and exchange mutable objects, while the groups are loosely-coupled from one another and exchange immutable objects via observation. This is an effective way of establishing boundaries between the parts of a code
+
+https://medium.com/@tombly/demystifying-reactive-programming-945656e933b8
+
+Code:
+
+https://gist.github.com/tombly/feb3130afa47310a5eb209232007b2f2
+
+Reactive Programming is a style of micro-architecture involving intelligent routing and consumption of events, all combining to change behaviour.
+
+This resonance of Reactive Programming arrived (not accidentally) at the same time as the rise of microservices, and the ubiquity of multi-core processors. Some of the reasons for that will hopefully become clear.
+
+The basic idea behind reactive programming is that there are certain datatypes that represent a value "over time".  e.g. a bank balance
+
+An easy way of reaching a first intuition about what it's like is to imagine your program is a spreadsheet and all of your variables are cells. If any of the cells in a spreadsheet change, any cells that refer to that cell change as well. Now imagine that some of the cells change on their own (or rather, are taken from the outside world): in a GUI situation, the position of the mouse would be a good example.
+
+What is reactive good for?
+
+https://dzone.com/articles/notes-on-reactive-programming-part-i-the-reactive
+
+Many backend services these days are REST-ful (i.e. they operate over HTTP) so the underlying protocol is fundamentally blocking and synchronous. Not obvious territory for FRP maybe, but actually it’s quite fertile ground because the implementation of such services often involves calling other services, and then yet more services depending on the results from the first calls. With so much IO going on if you were to wait for one call to complete before sending the next request, your poor client would give up in frustration before you managed to assemble a reply. So external service calls, especially complex orchestrations of dependencies between calls, are a good thing to optimize. FRP offers the promise of "composability" of the logic driving those operations, so that it is easier to write for the developer of the calling service.
+
+Highly Concurrent Message Consumers Message processing, in particular when it is highly concurrent, is a common enterprise use case. Reactive frameworks like to measure micro-benchmarks, and brag about how many messages per second you can process in the JVM. The results are truly staggering (tens of millions of messages per second are easy to achieve), but possibly somewhat artificial - you wouldn’t be so impressed if they said they were benchmarking a simple "for" loop. However, we should not be too quick to write off such work, and it’s easy to see that when performance matters, all contributions should be gratefully accepted. Reactive patterns fit naturally with message processing (since an event translates nicely into a message), so if there is a way to process more messages faster we should pay attention.
+
+Spreadsheets Perhaps not really an enterprise use case, but one that everyone in the enterprise can easily relate to, and it nicely captures the philosophy of, and difficulty of implementing FRP. If cell B depends on cell A, and cell C depends on both cells A and B, then how do you propagate changes in A, ensuring that C is updated before any change events are sent to B? If you have a truly active framework to build on, then the answer is "you don’t care, you just declare the dependencies," and that is really the power of a spreadsheet in a nutshell. It also highlights the difference between FRP and simple event-driven programming — it puts the "intelligent" in "intelligent routing".
+
+Abstraction Over (A)synchronous Processing This is more of an abstract use case, so straying into the territory we should perhaps be avoiding. There is also some (a lot) of overlap between this and the more concrete use cases already mentioned, but hopefully it is still worth some discussion. The basic claim is a familiar (and justifiable) one, that as long as developers are willing to accept an extra layer of abstraction, they can forget about whether the code they are calling is synchronous or asynchronous. Since it costs precious brain cells to deal with asynchronous programming, there could be some useful ideas there. Reactive Programming is not the only approach to this issue, but some of the implementers of FRP have thought hard enough about this problem that their tools are useful.
+
+Reactive products
+
+https://dzone.com/articles/notes-on-reactive-programming-part-i-the-reactive
+
+Reactive Streams is a very low-level contract, expressed as a handful of Java interfaces (plus a TCK), but also applicable to other languages. The interfaces express the basic building blocks of Publisher and Subscriber with explicit back pressure, forming a common language for interoperable libraries. Reactive Streams have been incorporated into the JDK asjava.util.concurrent.Flow in version 9. The project is a collaboration between engineers from Kaazing, Netflix, Pivotal, Red Hat, Twitter, Typesafe and many others.
+
+RxJava: Netflix were using reactive patterns internally for some time and then they released the tools they were using under an open source license as Netflix/RxJava (subsequently re-branded as "ReactiveX/RxJava"). Netflix does a lot of programming in Groovy on top of RxJava, but it is open to Java usage and quite well suited to Java 8 through the use of Lambdas. There is a bridge to Reactive Streams. RxJava is a "2nd Generation" library according to David Karnok’s Generations of Reactive classification.
+
+Reactor is a Java framework from the Pivotal open source team (the one that created Spring). It builds directly on Reactive Streams, so there is no need for a bridge. The Reactor IO project provides wrappers around low-level network runtimes like Netty and Aeron. Reactor is a "4th Generation" library according to David Karnok’s Generations of Reactive classification.
+
+Spring Framework 5.0 (first milestone July 2016) has reactive features built into it, including tools for building HTTP servers and clients. Existing users of Spring in the web tier will find a very familiar programming model using annotations to decorate controller methods to handle HTTP requests, for the most part handing off the dispatching of reactive requests and back pressure concerns to the framework. Spring builds on Reactor, but also exposes APIs that allow its features to be expressed using a choice of libraries (e.g. Reactor or RxJava). Users can choose from Tomcat, Jetty, Netty (via Reactor IO) and Undertow for the server side network stack.
+
+Ratpack is a set of libraries for building high-performance services over HTTP. It builds on Netty and implements Reactive Streams for interoperability (so you can use other Reactive Streams implementations higher up the stack, for instance). Spring is supported as a native component, and can be used to provide dependency injection using some simple utility classes. There is also some autoconfiguration so that Spring Boot users can embed Ratpack inside a Spring application, bringing up an HTTP endpoint and listening there instead of using one of the embedded servers supplied directly by Spring Boot.
+
+Akka is a toolkit for building applications using the Actor pattern in Scala or Java, with interprocess communication using Akka Streams, and Reactive Streams contracts are built in. Akka is a "3rd Generation" library according to David Karnok’s Generations of Reactive classification.
+
+The promise of Reactive is that you can do more with less, specifically you can process higher loads with fewer threads. This is where the intersection of Reactive and non-blocking, asynchronous I/O comes to the foreground. For the right problem, the effects are dramatic. For the wrong problem, the effects might go into reverse (you actually make things worse).
+
+A Flux is a publisher of a sequence of events of a specific POJO type, so it is generic
+
+Flux has some static convenience methods to create instances of itself from a variety of sources.
+Flux<String> flux = Flux.just("red", "white", "blue");
+
+Often you encounter a sequence that you know has only one or zero elements, for example a repository method that finds an entity by its id. Reactor has a Mono type representing a single valued or empty Flux. Mono has a very similar API to Flux but more focused because not all operators make sense for single-valued sequences. RxJava also has a bolt on (in version 1.x) called Single, and also Completable for an empty sequence. The empty sequence in Reactor is Mono<Void>.
+
+
+
+Flux<String> flux = Flux.just("red", "white", "blue");
+
+Flux<String> upper = flux
+  .log()
+  .map(String::toUpperCase);
+
+What’s interesting about this little sample — mind blowing, even, if you’re not used to it — is that no data have been processed yet. Nothing has even been logged because literally, nothing happened (try it and you will see). Calling operators on a Flux amounts to building a plan of execution for later. It is completely declarative, and it’s why people call it "functional". The logic implemented in the operators is only executed when data starts to flow, and that doesn’t happen until someone subscribes to the Flux (or equivalently to the Publisher).
+
+To make the data flow you have to subscribe to the Flux using one of the subscribe() methods. Only those methods make the data flow. They reach back through the chain of operators you declared on your sequence (if any) and request the publisher to start creating data.
+
+Reactor is extremely frugal with threads, because that gives you the greatest chance of the best possible performance. That might be a surprising statement if you’ve been wrangling threads and thread pools and asynchronous executions for the last 5 years, trying to squeeze more juice out of your services. But it’s true: in the absence of any imperative to switch threads, even if the JVM is optimized to handle threads very efficiently, it is always faster to do computation on a single thread. Reactor has handed you the keys to control all the asynchronous processing, and it assumes you know what you are doing.
+
+Extractors
+These methods are there as an escape hatch to bridge from Reactive to blocking; if you need to adapt to a legacy API, for instance Spring MVC. When you call Mono.block() you throw away all the benefits of the Reactive Streams.
+
+https://spring.io/blog/2016/06/13/notes-on-reactive-programming-part-ii-writing-some-code
