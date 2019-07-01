@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Account Sync]">
+  <test name="Address">
+    <classes>
+      <class name="nestservicestgtocaliber.address.CreateAddress"/>
+      <class name="nestservicestgtocaliber.address.DeleteAddress"/>
+      <class name="nestservicestgtocaliber.address.LookupAddress"/>
+      <class name="nestservicestgtocaliber.address.LookupAddressByAddressId"/>
+      <class name="nestservicestgtocaliber.address.UpdateCustomerAddress"/>
+      <class name="nestservicestgtocaliber.createuser.CreateUser"/>
+      <class name="nestservicestgtocaliber.createuser.LookUpCustomer"/>
+      <class name="nestservicestgtocaliber.createuser.UpdateCustomer"/>
+      <class name="nestservicestgtocaliber.creditcard.CreateCreditCard"/>
+      <class name="nestservicestgtocaliber.creditcard.DeleteCreditCard"/>
+      <class name="nestservicestgtocaliber.creditcard.LookUpCreditcard"/>
+      <class name="nestservicestgtocaliber.creditcard.LookUpWithMercuryId"/>
+    </classes>
+  </test> <!-- Address -->
+  <test name="Address(failed)">
+    <classes>
+      <class name="nestservicestgtocaliber.createuser.UpdateCustomer">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="TC03_Blank_CustomerId" invocation-numbers="0"/>
+          <include name="TC01_Positive_UpdateUser" invocation-numbers="0"/>
+          <include name="TC18_Blank_SecretAnswer" invocation-numbers="0"/>
+          <include name="TC12_Blank_RegistrationDate" invocation-numbers="0"/>
+          <include name="TC14_Invalid_Password" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="TC11_Blank_LastName" invocation-numbers="0"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC05_Invalid_Email" invocation-numbers="0"/>
+          <include name="TC02_Invalid_CustomerId" invocation-numbers="0"/>
+          <include name="TC09_Blank_Password" invocation-numbers="0"/>
+          <include name="TC10_Blank_FirstName" invocation-numbers="0"/>
+          <include name="TC15_Invalid_SecretQuestionId" invocation-numbers="0"/>
+          <include name="TC16_Blank_SecretQuestionId" invocation-numbers="0"/>
+          <include name="TC17_Invalid_SecretAnswer" invocation-numbers="0"/>
+          <include name="TC14_Blank_LastModified" invocation-numbers="0"/>
+          <include name="TC07_Blank_Email" invocation-numbers="0"/>
+          <include name="TC13_Blank_LastModified" invocation-numbers="0"/>
+          <include name="TC08_Blank_Login" invocation-numbers="0"/>
+          <include name="TC06_Invalid_Login" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.createuser.UpdateCustomer -->
+      <class name="nestservicestgtocaliber.creditcard.DeleteCreditCard">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="TC02_Positive_DeleteCreditCardVI" invocation-numbers="0"/>
+          <include name="TC07_Invalid_CardId" invocation-numbers="0"/>
+          <include name="TC08_Blank_UserId" invocation-numbers="0"/>
+          <include name="TC01_Positive_DeleteCreditCard" invocation-numbers="0"/>
+          <include name="TC06_InvalidUserId" invocation-numbers="0"/>
+          <include name="TC05_CardId_Associated_2_UserId" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="TC04_Positive_DeleteCreditCardAX" invocation-numbers="0"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC03_Positive_DeleteCreditCardDI" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.creditcard.DeleteCreditCard -->
+      <class name="nestservicestgtocaliber.creditcard.LookUpWithMercuryId">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="TC02_InvalidMercuryID" invocation-numbers="0"/>
+          <include name="TC03_ValidMercuryIDInvalidCCID" invocation-numbers="0"/>
+          <include name="TC05_MercuryIDAssociatedWithOtherUsr" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="TC04_BlankMercuryID" invocation-numbers="0"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC01_Positive_LookupCreditCard_Id" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.creditcard.LookUpWithMercuryId -->
+      <class name="nestservicestgtocaliber.creditcard.LookUpCreditcard">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="TC03_BlankUserID" invocation-numbers="0"/>
+          <include name="TC02_InvalidUserID" invocation-numbers="0"/>
+          <include name="TC06_NoCCinCustomerAccount" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC01_Positive_LookUp_CA" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.creditcard.LookUpCreditcard -->
+      <class name="nestservicestgtocaliber.address.LookupAddress">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="TC03_BlankID_LookUp_CA" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="TC02_InvalidID_LookUp_CA" invocation-numbers="0"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC01_Positive_LookUp_CA" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.address.LookupAddress -->
+      <class name="nestservicestgtocaliber.address.LookupAddressByAddressId">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="TC03_BlankUID_LookUpCA_ID" invocation-numbers="0"/>
+          <include name="TC02_InvalidUID_LookUpCA_ID" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC01_Positive_LookUpCA_ID" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.address.LookupAddressByAddressId -->
+      <class name="nestservicestgtocaliber.creditcard.CreateCreditCard">
+        <methods>
+          <include name="TC18_CC_AlreadyExists" invocation-numbers="0"/>
+          <include name="setUpBeforeClass"/>
+          <include name="TC04_Positive_CreditCardTypeDI" invocation-numbers="0"/>
+          <include name="TC07_InvalidAccDisplayNum" invocation-numbers="0"/>
+          <include name="TC13_Invalid_CardExpYr" invocation-numbers="0"/>
+          <include name="TC14_Blank_CardExpYr" invocation-numbers="0"/>
+          <include name="TC01_Positive_CreateCreditCard" invocation-numbers="0"/>
+          <include name="TC03_Positive_CreditCardTypeAMX" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="TC05_Invalid_CC_Token" invocation-numbers="0"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC10_Blank_CardType" invocation-numbers="0"/>
+          <include name="TC12_Blank_CardExpMo" invocation-numbers="0"/>
+          <include name="TC02_Positive_CreditCardTypeVI" invocation-numbers="0"/>
+          <include name="TC08_BlnkAccDisplayNum" invocation-numbers="0"/>
+          <include name="TC11_Invalid_CardExpMo" invocation-numbers="0"/>
+          <include name="TC25_Postivie_CreditCardTypeJB" invocation-numbers="0"/>
+          <include name="TC09_Invalid_CardType" invocation-numbers="0"/>
+          <include name="TC15_Invalid_LastModified" invocation-numbers="0"/>
+          <include name="TC17_NoMatchMercuryUsrID" invocation-numbers="0"/>
+          <include name="TC16_Blank_LastModified" invocation-numbers="0"/>
+          <include name="TC06_Blank_CC_Token" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.creditcard.CreateCreditCard -->
+      <class name="nestservicestgtocaliber.createuser.CreateUser">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="TC09_BlnakPassword" invocation-numbers="0"/>
+          <include name="TC12_BlnakRegistrationDate" invocation-numbers="0"/>
+          <include name="TC05_InvalidEmail" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC01_Positive_CreateUser" invocation-numbers="0"/>
+          <include name="TC06_InvalidLogon" invocation-numbers="0"/>
+          <include name="TC16_BlankSecretQuestionID" invocation-numbers="0"/>
+          <include name="TC11_BlnakLastName" invocation-numbers="0"/>
+          <include name="TC10_BlnakFirstname" invocation-numbers="0"/>
+          <include name="TC13_BlnakLastModified" invocation-numbers="0"/>
+          <include name="TC07_BlnakEmail" invocation-numbers="0"/>
+          <include name="TC15_InvalidSecretQuestionID" invocation-numbers="0"/>
+          <include name="TC02_ExistingEmail_Negetive" invocation-numbers="0"/>
+          <include name="TC08_Blnaklogin" invocation-numbers="0"/>
+          <include name="TC18_BlankSecretAnswer" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.createuser.CreateUser -->
+      <class name="nestservicestgtocaliber.address.UpdateCustomerAddress">
+        <methods>
+          <include name="TC01_Positive_UpdateCA" invocation-numbers="0"/>
+          <include name="setUpBeforeClass"/>
+          <include name="TC02_BlankAddressNickname" invocation-numbers="0"/>
+          <include name="TC04_Invalid_LastModified" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC03_Blank_LastModified" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.address.UpdateCustomerAddress -->
+      <class name="nestservicestgtocaliber.createuser.LookUpCustomer">
+        <methods>
+          <include name="TC02_InvalidMercuryID" invocation-numbers="0"/>
+          <include name="setUpBeforeClass"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC01_Positive_CreateUser" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.createuser.LookUpCustomer -->
+      <class name="nestservicestgtocaliber.address.CreateAddress">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="setUpAfterGroups"/>
+          <include name="setUpBeforeSuite"/>
+          <include name="TC04_InvalidLastModified" invocation-numbers="0"/>
+          <include name="TC03_BlankLastModified" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="TC02_BlankAddressNickname" invocation-numbers="0"/>
+          <include name="tearDownAfterSuite"/>
+          <include name="TC01_Positive" invocation-numbers="0"/>
+          <include name="setUpBeforeGroups"/>
+          <include name="TC05_InvalidAddress1" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.address.CreateAddress -->
+      <class name="nestservicestgtocaliber.address.DeleteAddress">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="TC01_Positive" invocation-numbers="0"/>
+          <include name="TC05_DeleteNonExistingID" invocation-numbers="0"/>
+          <include name="TC02_InvalidCustomerId" invocation-numbers="0"/>
+          <include name="TC04_Mismatch_AddID_MercuryUID" invocation-numbers="0"/>
+          <include name="tearDownAfterMethod"/>
+          <include name="TC03_InvalidAddressId" invocation-numbers="0"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeMethod"/>
+        </methods>
+      </class> <!-- nestservicestgtocaliber.address.DeleteAddress -->
+    </classes>
+  </test> <!-- Address(failed) -->
+</suite> <!-- Failed suite [Account Sync] -->
