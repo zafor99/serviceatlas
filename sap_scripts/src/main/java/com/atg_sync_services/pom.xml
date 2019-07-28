@@ -1,0 +1,189 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com</groupId>
+  <artifactId>atg-sync-services</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>atg-sync-services</name>
+  <url>http://maven.apache.org</url>
+
+<properties>
+  <!-- Versions -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <selenium-java.version>2.50.1</selenium-java.version>
+    <spring-test.version>4.2.4.RELEASE</spring-test.version>
+    <commons-io.version>2.4</commons-io.version>
+    <apachi-poi.version>3.8-beta4</apachi-poi.version>
+    <jdom-xml.version>1.1</jdom-xml.version>
+    <org.hibernate.version>5.1.0.Final</org.hibernate.version>
+    <mysql-connector.version>5.1.38</mysql-connector.version>
+    <jackson.codehaus.version>1.19.3</jackson.codehaus.version>
+    <!-- End of Versions -->
+  </properties>
+
+  <dependencies>
+    <dependency>
+    <groupId>xml-apis</groupId>
+    <artifactId>xml-apis</artifactId>
+    <version>1.4.01</version>
+	</dependency>
+
+   <dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>${selenium-java.version}</version>
+	</dependency>
+	
+  
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>${spring-test.version}</version>
+	</dependency>
+	
+	    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring-test.version}</version>
+    </dependency>
+
+	
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>${commons-io.version}</version>
+	</dependency>
+	
+	<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>${apachi-poi.version}</version>    
+	</dependency>
+    
+    <dependency>
+	<groupId>jdom</groupId>
+	<artifactId>jdom</artifactId>
+	<version>${jdom-xml.version}</version>
+	</dependency>
+	
+	<dependency>
+   	 <groupId>org.testng</groupId>
+   	 <artifactId>testng</artifactId>
+   	 <version>6.9.10</version>
+	</dependency>
+	
+	<dependency>
+  		<groupId>com.microsoft.sqlserver</groupId>
+  		<artifactId>sqljdbc4</artifactId>
+  		<version>4.0</version>
+	</dependency>
+	
+<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc14</artifactId>
+    <version>10.2.0.4.0</version>
+</dependency>
+
+<dependency>
+	<groupId>org.glassfish.jersey.core</groupId>
+	<artifactId>jersey-client</artifactId>
+	<version>2.22.2</version>
+</dependency>
+
+<dependency>
+    <groupId>com.relevantcodes</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>2.41.0</version>
+</dependency>
+
+<dependency>
+      <groupId>com.bn.qa.bnwebserviceclient</groupId>
+      <artifactId>bnwebserviceclient</artifactId>
+      <version>5.5</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/libs/com.bn.qa.bnwebserviceclient.jar</systemPath>
+ 	</dependency>
+
+  	
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${org.hibernate.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql-connector.version}</version>
+	</dependency>
+	
+    <dependency>
+        <groupId>net.sf.json-lib</groupId>
+        <artifactId>json-lib</artifactId>
+        <version>2.4</version>
+        <classifier>jdk15</classifier>
+    </dependency>
+    
+	
+	<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.8.1</version>
+</dependency>
+	
+	<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.8.1</version>
+</dependency>
+	
+	
+	<dependency>
+    <groupId>com.fasterxml.jackson.jaxrs</groupId>
+    <artifactId>jackson-jaxrs-json-provider</artifactId>
+    <version>2.8.1</version>
+</dependency>
+	
+	<dependency>
+    <groupId>org.codehaus.jackson</groupId>
+    <artifactId>jackson-xc</artifactId>
+    <version>1.9.13</version>
+	</dependency>
+	
+	    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>3.0.1</version>
+      <scope>test</scope>
+	</dependency>
+	
+	<dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>json-path</artifactId>
+      <version>3.0.1</version>
+	</dependency>
+	
+	<dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>xml-path</artifactId>
+      <version>3.0.1</version>
+	</dependency>
+	
+	<dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>json-schema-validator</artifactId>
+      <version>3.0.1</version>
+      <scope>test</scope>
+	</dependency>
+	
+		<dependency>
+    <groupId>org.hamcrest</groupId>
+    <artifactId>hamcrest-all</artifactId>
+    <version>1.3</version>
+	</dependency>
+
+
+  </dependencies>
+</project>
